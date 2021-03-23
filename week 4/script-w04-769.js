@@ -1,5 +1,9 @@
 'use strict';
+
+// 1.Functional Declarations vs. Expression
+
 /*
+
 let  worldPopulation = 7900;
 //function declaration
 
@@ -16,6 +20,8 @@ const percentageOfWorld3 = (population) => {
     return population/worldPopulation *100;
 }
 
+//China
+
 let chinaPopulation = 1441
 
 let p1 = percentageOfWorld1(chinaPopulation).toFixed(1);
@@ -24,61 +30,40 @@ let p3 = percentageOfWorld3(chinaPopulation).toFixed(1);
 console.log('china',p1,p2,p3);
 console.log(`china population ${chinaPopulation} million is ${p1}% of world population ${worldPopulation} million.`)
 
+//Taiwan
 
-function percentageOfWorld4 (population) {
-    return population/worldPopulation *100;
-}
-//function expression
-const percentageOfWorld5 =function(population) {
-    return population/worldPopulation *100;
-}
-
-// arrow function
-const percentageOfWorld6 = (population) => {
-    return population/worldPopulation *100;
-}
-
-let taiwanPopulation = 23.57
-let p4 = percentageOfWorld4(taiwanPopulation).toFixed(1);
-let p5 = percentageOfWorld5(taiwanPopulation).toFixed(1);
-let p6 = percentageOfWorld6(taiwanPopulation).toFixed(1);
+let taiwanPopulation = 23.19
+let p4 = percentageOfWorld1(taiwanPopulation).toFixed(1);
+let p5 = percentageOfWorld2(taiwanPopulation).toFixed(1);
+let p6 = percentageOfWorld3(taiwanPopulation).toFixed(1);
 console.log('taiwan',p4,p5,p6);
 console.log(`Taiwan population ${taiwanPopulation} million is ${p4}% of world population ${worldPopulation} million.`)
 
-function percentageOfWorld7 (population) {
-    return population/worldPopulation *100;
-}
-
-//function expression
-const percentageOfWorld8 =function(population) {
-    return population/worldPopulation *100;
-}
-
-// arrow function
-const percentageOfWorld9 = (population) => {
-    return population/worldPopulation *100;
-}
+//USA
 
 let USAPopulation = 350.29
-let p7 = percentageOfWorld7(USAPopulation).toFixed(1);
-let p8 = percentageOfWorld8(USAPopulation).toFixed(1);
-let p9 = percentageOfWorld9(USAPopulation).toFixed(1);
+let p7 = percentageOfWorld1(USAPopulation).toFixed(1);
+let p8 = percentageOfWorld2(USAPopulation).toFixed(1);
+let p9 = percentageOfWorld3(USAPopulation).toFixed(1);
 console.log('USA',p7,p8,p9);
 console.log(`USA population ${USAPopulation} million is ${p7}% of world population ${worldPopulation} million.`)
+
 */
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 2.Functions Calling Other Functions
 
 /*
 
 let worldPopulation =7900;
 
-const percentageOfWorld3 =(population) =>{
+const percentageOfWorld =(population) =>{
     return population/worldPopulation *100;
 }
 
 const describePopulation =(country,population) => {
-    let percentage = percentageOfWorld3(population).toFixed(1);
+    let percentage = percentageOfWorld(population).toFixed(1);
     let str = `${country} population ${population} is ${percentage}% of the world population ${worldPopulation} million.`
     return str;
 }
@@ -89,14 +74,18 @@ console.log(describePopulation('USA',350.29));
 
 */
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 3. Code Challenges
+
 /*
 
 const calcAverage = (s1 , s2, s3)=>((s1+s2+s3)/3).toFixed(2);
 
 const checkWinner = function(avgDolphins,avgKoalas) {
-    if(avgDolphins >= 2* avgKoalas){
+    if(avgKoalas>= 2* avgDolphins ){
         console.log(`Koalas win ${avgKoalas} vs ${avgDolphins}`);
-    }else if(avgKoalas >= 2* avgDolphins){
+    }else if(avgDolphins >= 2* avgKoalas){
         console.log(`Dolphins win ${avgDolphins} vs ${avgKoalas}`);
     }else{
         console.log(`No team wins`);
@@ -109,18 +98,23 @@ let avgKoalas1 = calcAverage(65,54,49);
 checkWinner(avgDolphins1,avgKoalas1);
 
 
-let avgDolphins2 = calcAverage(23,24,27);
-let avgKoalas2 = calcAverage(100,20,90);
+let avgDolphins2 = calcAverage(85,54,41);
+let avgKoalas2 = calcAverage(23,34,27);
 checkWinner(avgDolphins2,avgKoalas2);
 
 
-let avgDolphins3 = calcAverage(100,79,50);
-let avgKoalas3 = calcAverage(21,36,50);
+let avgDolphins3 = calcAverage(21,36,50);
+let avgKoalas3 = calcAverage(100,79,50);
 checkWinner(avgDolphins3,avgKoalas3);
 
 */
 
-/*
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// 4.Introduction to Arrays
+
+
+
 let  worldPopulation = 7900;
 
 const percentageOfWorld3 = (population) => {
@@ -164,8 +158,11 @@ for(let j =0;j<countries.length;j++){
     console.log(`${countries[j]} population ${population[j]} million is ${percentage3[j]}% of the world population ${worldPopulation} million.`)
 }
 
-*/
 
+
+//6.Code Challenges
+
+/*
 const calcTip =(bill)=>(bill>=50 && bill<=300)? bill*0.15:bill*0.2;
 //console.log(calcTip(100));
 
@@ -180,3 +177,5 @@ for(let i=0; i<bills.length;i++) {
     total.push(bills[i]+tips[i]);
 }
 console.log('total',total);
+
+*/
