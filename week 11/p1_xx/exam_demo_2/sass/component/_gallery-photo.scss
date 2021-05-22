@@ -1,0 +1,62 @@
+.photos {
+    overflow: hidden;
+    border-radius: $radius;
+    cursor: pointer;
+    position: relative; //必須將position改成relative，否則文字不會自動對齊自grid
+
+    &__img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        transition: transform 250ms ease-out;
+    }
+
+    &__details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba($clr-gray100, .5);
+        backdrop-filter: blur(2px) brightness(1.1);
+        padding: 0.5rem;
+        opacity: 0;
+        transition: opacity 350ms;
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            line-height: 2rem;
+            color: $clr-gray100;
+            text-shadow: 0 0 .8rem $clr-gray700;
+            position: relative;
+            top: 2rem;
+            transition: top 350ms;
+        }
+    }
+
+    &:hover &__img {
+        transform: scale(1.1);
+    }
+
+    &:hover &__details {
+        opacity: 1;
+    }
+
+    &:hover &__details h2 {
+        top: 0;
+    }
+}
+
+//請在此作答！！
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+.gallery {
+    position: relative;
+    display: grid;
+    max-width: 140rem;
+    margin: 5rem auto;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-auto-rows: 10rem;
+    //dense可以透過演算法自動填補較大的空隙，但html順序有可能被打亂
+    grid-auto-flow: dense;
+    grid-gap: .8rem;
+}

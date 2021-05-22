@@ -1,0 +1,78 @@
+.nav-container {
+
+    &__check-btn {
+        position: fixed;
+        top: 5rem;
+        right: 3rem;
+        display: none;
+        float: right;
+        width: 5rem;
+        height: .8rem;
+        background-color: $clr-gray400;
+        z-index: 1000;
+        cursor: pointer;
+
+        &::before, &::after {
+            content: "";
+            width: 5rem;
+            height: .8rem;
+            background-color: $clr-gray400;
+            position: absolute;
+            display: none;
+            transition: all 0.6s $animation-curve;
+        }
+
+        &::before {
+            top: -200%;
+            left: 0%;
+            transform: rotateZ(0deg);
+            transform-origin: left top;
+        }
+
+        &::after {
+            bottom: -200%;
+            left: 0%;
+            transform: rotateZ(0deg);
+            transform-origin: left bottom;
+        }
+    }
+
+    #check {
+        display: none;
+    }
+
+    @include iphone {
+        &__check-btn {
+            display: block;
+    
+            &::before, &::after {
+                display: block;
+            }
+        }
+    
+        #check:checked ~ &__check-btn::before {
+            content: "";
+            transform: rotateZ(45deg);
+            left: 10%;
+        }
+    
+        #check:checked ~ &__check-btn::after {
+            content: "";
+            transform: rotateZ(-45deg);
+            left: 10%;
+        }
+    
+        #check:checked ~ &__check-btn {
+            background-color: $clr-gray200;
+        }
+    
+        #check ~ &__check-btn {
+            transition: all 0.5s $animation-curve;
+        }
+    
+        #check:checked ~ .nav{
+            right: 0;
+        }
+    }
+}
+
